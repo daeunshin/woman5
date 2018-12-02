@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>I'm a Feminist</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body{background:black;}
+/*텍스트*/
+		#womantextbox{position: relative; margin-bottom: 100px;}
+		.womant1{color: white; font-size: 80px; font-weight: bold; letter-spacing: 0px;}
+/*슬라이더*/
+		#slidebox{width: 900px; height: 490px;position: relative; left:calc(50% - 450px); margin-bottom: 100px;}
+
+			.slidecontainer{ position: absolute; width: 800px; left:calc(50% - 400px); bottom: 0;}
+				.slider{-webkit-appearance:none; width: 100%; height: 5px; background:#d3d3d3; outline: none;}
+		
+				.slider::-webkit-slider-thumb {
+					-webkit-appearance:none; 
+					appearance:none; 
+					width: 25px; 
+					height: 25px; 
+					background: black; 
+					cursor: pointer; 
+					border-radius: 50%;
+					border-style: solid;
+					border-color: white;
+				}
+
+				.slider::-moz-range-thumb {
+					width: 25px; 
+					height: 25px; 
+					background: white; 
+					cursor: pointer; 
+				}
+
+		#imimgcontainer{width: 780px; height: 400px; padding: 0; left: calc(50% - 390px);  position: absolute;}
+
+			.imimg{position:absolute;width: 760px; padding-top: 150px; left: 20px;}
+
+		#linecontainer{position: absolute; width: 800px; height: 400px; padding: 0; left:calc(50% - 400px);}
+/*여신상*/
+		#statuebox{position: relative; width: 900px; left: calc(50% - 450px); height: 550px; margin-bottom: 100px; }
+		#statueimg{width: 550px; left: calc(50% - 275px); position: absolute;}
+
+/*문장 만들기 droptarget*/
+		#dragbox{position: relative; width: 900px; height: 100px; left: calc(50% - 450px);margin-bottom: 300px;}
+		.droptarget { float:left; height: 35px; margin: 10px; width: 90px; border-bottom : 1px solid white; color: white; position: absolute;}
+		.shuffle1
+		.shuffle2
+
+		#dragtextbox{position: relative;width: 800px; height: 200px; left: calc(50% - 400px); top: 100px;}
+		.dragtext1{position: absolute; width: 800px; top: 0px; left:calc(50% - 400px);}
+		.dragtext2{position: absolute; width: 800px; top: 70px; left:calc(50% - 400px);}
+
+		.dragempty{position: relative; width: 800px; height: 150px; left: calc(50% - 400px); top: 200px;}
+
+		
+	</style>
+</head>
+<body>
+	
+	<section id="womantextbox">
+		<h1 style="color: white;">blablalala</h1>
+		<div class="womant1" >
+			여기자들이 모두 그쪽처럼 생겼다면 이 여성 권리 운동을 더 심각하게 생각해 보고 싶은 마음도 드는군요
+			<small>_'Cloud Atlas', 2012.</small>
+			그 여자의 몸은 더러웠다. 다리 사이에서 지독한 젓국 냄새가 퍼져나왔다
+			<small>_김훈'칼의노래', 2001.</small>
+			처음 업어보는 처녀의 무게만하겠네 처음 배에 올려보는 여자의 희고 미끄러운 허벅지 무게만하겠네
+			<small>_장석남'꽃이 무거운 꽃나무여', 2012.</small>
+			저 년이 아무리 예쁘게 단장을 하고 치맛자락을 살랑거리며 화냥기를 드러내 보여도 절대로 거들떠 보지 말아라<small>_이외수'단풍',2018.</small>
+		</div>
+	</section>
+	<div id="statuebox">
+		<img src="statue.jpg" id="statueimg">	
+	</div>
+
+	<section id="slidebox">
+		
+		<div id="linecontainer">
+			<canvas id="myCanvas" width="800" height="400" style="border:1px solid #d3d3d3;">
+			</canvas>
+		</div>
+
+		<div id="imimgcontainer">
+			<img src="./im/im1.png" class="imimg" id="monitor">
+		</div>
+		<div class="slidecontainer">
+			<input type="range" min="1" max="23" value="1" class="slider" id="myRange">
+			<p style="color: white">Value <span id="demo"></span></p>
+		</div>
+	</section>
+
+	<!--드래그드롭-->
+	<section id="dragbox">
+	<div id="dragtextbox">
+		<div class="dragtext1">
+			<div class="droptarget shuffle1" style="left:0px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget1">중립은</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:110px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget2">가해자에게만</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:220px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget3">이로울 뿐</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:330px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget4">피해자에게는</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:440px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget5">아무런</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:550px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget6">도움이</p>
+			</div>
+			<div class="droptarget shuffle1" style="left:660px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget7">되지</p>
+			</div>
+		</div>
+		<div class="dragtext2">
+			<div class="droptarget shuffle2" style="left:0px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget8">않으며</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:110px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget9">침묵은</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:220px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget10">결국</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:330px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget11">괴롭히는 사람</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:440px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget12">편에</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:550px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget13">서 있는</p>
+			</div>
+			<div class="droptarget shuffle2" style="left:660px;" ondrop="drop(event)" ondragover="allowDrop(event)">
+				<p ondragstart="dragStart(event)" draggable="true" id="dragtarget14">것이다</p>
+			</div>
+		</div>
+		
+	</div>
+
+		<div class="dragempty">
+			<div class="droptarget" style="left:0px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:110px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:220px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:330px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:440px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:550px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:660px;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:0px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:110px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:220px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:330px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:440px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:550px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+			<div class="droptarget" style="left:660px; top: 70px; " ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+		</div>
+	</section>
+
+
+	<script>
+
+		//--슬라이더--//
+		var slider = document.getElementById("myRange");
+		var output = document.getElementById("demo");
+		output.innerHTML = slider.value;
+
+		slider.oninput = function() {
+			output.innerHTML = this.value;
+			monitor.src = "./im/im"+ this.value +".png";
+
+			console.log(this.value);
+		}
+
+		//--슬라이더 라인--//
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+		ctx.beginPath();
+		ctx.moveTo(0,0);
+		ctx.lineTo(800,100);
+		ctx.strokeStyle="white";
+		ctx.lineWidth = 0.3;
+		ctx.stroke();
+
+		//--슬라이더 라인 복제--//
+
+		
+
+		//--드래그앤드롭--//
+		function dragStart(event){
+			event.dataTransfer.setData("Text",event.target.id);
+			console.log(event.target.id);
+		}
+		function allowDrop(event) {
+			event.preventDefault();
+		}
+		function drop(event){
+			event.preventDefault();
+			var data = event.dataTransfer.getData("Text");
+			console.log(data);
+			event.target.appendChild(document.getElementById(data));
+		}
+
+		//--드래그앤드롭 셔플1--//
+		//클래스 이름과 아이템 간격을 인자로 실행한다.
+		shuffleArray("shuffle1",110);
+
+		function shuffleArray(cName,gap){
+			var t = document.getElementsByClassName(cName);
+			//클래스 숫자만큼 배열을 만들고 간격의 배수로 left값을 설정
+			var j = [];
+			for(var i=0; i<t.length; i++){
+				j.push(i*gap + "px");
+			}
+
+			//left값의 배열이 j에 저장되는데 이 배열을 섞는다.
+			shuffle(j);
+
+			//다시 클래스 아이템들에 새로운 left값을 지정한다.
+			for(i=0; i<t.length; i++){
+				t[i].style.left = j[i];
+			}
+
+			//shuffle함수
+			function shuffle(a) {
+				var j,x,i;
+				for(i=a.length - 1; i>0; i--){
+					j =  Math.floor(Math.random() * (i +1));
+					x = a[i]; a[i]=a[j]; a[j] = x;
+				}
+				return a;
+			}
+		}
+
+		//--드래그앤드롭 셔플2--//
+		//클래스 이름과 아이템 간격을 인자로 실행한다.
+		shuffleArray("shuffle2",110);
+
+		function shuffleArray(cName,gap){
+			var t = document.getElementsByClassName(cName);
+			//클래스 숫자만큼 배열을 만들고 간격의 배수로 left값을 설정
+			var j = [];
+			for(var i=0; i<t.length; i++){
+				j.push(i*gap + "px");
+			}
+
+			//left값의 배열이 j에 저장되는데 이 배열을 섞는다.
+			shuffle(j);
+
+			//다시 클래스 아이템들에 새로운 left값을 지정한다.
+			for(i=0; i<t.length; i++){
+				t[i].style.left = j[i];
+			}
+
+			//shuffle함수
+			function shuffle(a) {
+				var j,x,i;
+				for(i=a.length - 1; i>0; i--){
+					j =  Math.floor(Math.random() * (i +1));
+					x = a[i]; a[i]=a[j]; a[j] = x;
+				}
+				return a;
+			}
+		}
+
+
+
+
+
+
+		
+
+
+
+
+
+
+	</script>
+</body>
+</html>
